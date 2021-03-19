@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+</head>
+<body>
+    
+  <div id="app">　<!-- 仮想DOM -->
+    {{ message }}
+    <a v-bind:href ="google">googleへのリンク</a>　
+    <!-- v-bindの省略 -->
+    <a :href ="google">googleへのリンク</a>　
+    <br>
+    オブジェクトキー
+    <a :href ="book.url">{{book.title}}</a>
+    <br>
+
+  
+    <input v-bind="{name:forminput.name , placeholder:forminput.placeholder}">
+    <br>
+    <input v-bind="forminput">
+  </div>
+
+  <script>
+
+  // let app = new Vue({ インスタンス化したものをapp変数の代入している
+
+  // })
+  let app = new Vue({
+    el: '#app', //仮想DOM # = id
+    data(){ // 初期設定　data: function(){}省略可能ES６
+      return  {
+        message: 'Hello Vue!', //キー(key):値(value)
+        google: 'https://google.com',
+        book: {
+          title: '本のタイトル',
+          url: 'https://google.com'
+        },
+        forminput:{
+          name: 'your_name',
+          placeholder: '名前を入力してください'
+        }
+      }
+    }
+  })
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <my-component></my-component>
+    <my-component></my-component>
+    <my-component></my-component>
+  </div>
+
+
+  <script>
+     Vue.component('my-component', {
+       template:`<div>
+        aaa<br>
+        iii
+        <div v-show="isShow">表示</div>
+        </div>`,
+        data(){
+          return   {
+            isShow:false
+          }
+        }
+     })
+    let app = new Vue({
+      el: '#app', //仮想DOM # = id
+      data(){ // 初期設定　data: function(){}省略可能ES６
+        return  {
+
+          
+        }
+      }
+    })
+    
+    </script>
+</body>
+</html>
