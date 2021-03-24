@@ -1,0 +1,53 @@
+<template>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <!-- <router-link to="/about" tag="button">About</router-link> -->
+      <router-link to="/about" exact-active-class="test" >About</router-link>
+      <router-link to="/book" >BookList</router-link> |
+      <router-link to="/item/1" >Item</router-link> 
+      <router-link to="/user/profile" >User</router-link> 
+
+    </div>
+    <div class="blue-b">
+      <transition name="fade" mode="out-in">
+        <router-view/>
+      </transition>
+    </div>
+      <router-view name="sub"/>
+  </div>
+</template>
+<style lang="scss">
+</style>
+<style>
+.blue-b{
+  border: 1px blue solid;
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-active {
+  color: red;
+}
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+#nav a.test{
+  color: blue;
+}
+</style>
